@@ -9,10 +9,19 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var bookLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var bookImage: UIImageView!
+    
+    var book: BookAuthor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bookLabel.text = book?.book
+        authorLabel.text = book?.author
+        bookImage.image = UIImage(named: book?.imageName ?? "")
     }
     
 
